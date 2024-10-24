@@ -8,5 +8,8 @@
 ```
 git clone https://github.com/waseemnaseeven/My_Game_Of_Life.git
 cd My_Game_Of_Life/
+python3 -m venv <name>
+source <name>/bin/activate
+pip install numpy pygame
 python3 My_GOL.py
 ```
