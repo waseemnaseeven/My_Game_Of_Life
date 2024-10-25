@@ -3,8 +3,6 @@
 
 ![GOL](img/GOL.gif)
 
-![Screenshot](img/GameOfLifeDiagram.png)
-
 ### PROCESS
 
 ```
