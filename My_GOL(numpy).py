@@ -6,19 +6,16 @@ ALIVE = 1
 DEAD = 0
 vals = [ALIVE, DEAD]
 
-#vals: C'est un tableau ou une liste qui représente l'ensemble de valeurs parmi
-# 		lesquelles nous voulons choisir. Dans votre cas, vals semble être [0, 1],
-# 		car vous voulez choisir aléatoirement entre les valeurs 0 (cellules mortes)
-# 		et 1 (cellules vivantes).
+#vals: C'est un tableau qui représente l'ensemble de valeurs parmi
+# 		lesquelles nous voulons choisir, entre 0 et 1.
 
 #N*N: C'est le nombre total d'éléments que nous voulons choisir. Dans ce cas,
 # 		c'est égal à la taille de la grille, c'est-à-dire NxN.
 
 #p=[0.2, 0.8]: C'est le paramètre de probabilité associé à chaque élément de
 # 				vals. Il définit la probabilité d'apparition de chaque élément.
-# 				Dans votre cas, vous avez spécifié [0.2, 0.8], ce qui signifie
-# 				que la probabilité de choisir 0 (cellules mortes) est de 0.2,
-# 				et la probabilité de choisir 1 (cellules vivantes) est de 0.8.
+# 				La probabilité de choisir 0 (cellules mortes) est de 0.2,
+# 				La probabilité de choisir 1 (cellules vivantes) est de 0.8.
 
 #.reshape(N, N): C'est une fonction de manipulation des tableaux NumPy qui permet
 # 				de remodeler le tableau résultant en une grille de taille NxN.
@@ -72,7 +69,7 @@ def main(N, cell_size):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            elif event.type == pygame.K_ESCAPE:
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 print("want to escape")
                 running = False
         os.system('cls' if os.name =='nt' else 'clear')
@@ -86,6 +83,6 @@ def main(N, cell_size):
     pygame.quit()
 
 if __name__ == '__main__':
-    N = int(input("Size of the grid: "))
-    cell_size = int(input("Size of the cell: "))
+    N = int(input("Size of the grid: [30]"))
+    cell_size = int(input("Size of the cell: [10]"))
     main(N, cell_size)
